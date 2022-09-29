@@ -35,14 +35,19 @@ classifiers = [
     "Topic :: Text Processing :: Markup :: HTML",
 ]
 
-include = [
-    "sphinx_revealjs/themes/sphinx_revealjs/static/revealjs4/**/*",
-]
+[tool.flit.external-data]
+directory = "sphinx_revealjs/themes/sphinx_revealjs/static/revealjs4/"
 
 [dependencies]
 python = "^3.6 | ^3.7 | ^3.8 | ^3.9 | ^3.10"
 docutils = "*"
 sphinx = "*"
+
+[project.urls]
+homepage = "https://github.com/attakei/sphinx-revealjs"
+repository = "https://github.com/attakei/sphinx-revealjs"
+documentation = "https://sphinx-revealjs.readthedocs.io/"
+
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.8.4"
