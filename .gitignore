@@ -3,6 +3,9 @@ demo/*/_build
 # Created by https://www.toptal.com/developers/gitignore/api/python,virtualenv,visualstudiocode,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,virtualenv,visualstudiocode,node
 
+/.project
+/.pydevproject
+
 ### Node ###
 # Logs
 logs
