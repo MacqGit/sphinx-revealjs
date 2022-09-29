@@ -94,7 +94,7 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+# dist  MUST NOT BE ACTIVATED TO GET dist FOLDER IN DISTRIBUTION
 
 # Storybook build outputs
 .out
@@ -102,7 +102,7 @@ dist
 storybook-static
 
 # rollup.js default build output
-dist/
+# dist/  MUST NOT BE ACTIVATED TO GET dist FOLDER IN DISTRIBUTION
 
 # Gatsby files
 .cache/
