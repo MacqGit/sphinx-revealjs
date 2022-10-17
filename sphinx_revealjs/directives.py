@@ -64,6 +64,7 @@ REVEALJS_SECTION_ATTRIBUTES = {
     "data-auto-animate-restart": lambda x: FlagAttribute(),
     # Auto-Slide / Slide Timing
     "data-autoslide": directives.unchanged,
+    "data-audio-src": directives.unchanged
 }
 
 
