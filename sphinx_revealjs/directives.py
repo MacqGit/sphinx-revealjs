@@ -73,6 +73,11 @@ class RevealjsSection(Directive):  # noqa: D101
 
     def run(self):  # noqa: D102
         node = revealjs_section()
+        if 'data-audio-src' in self.options:
+            path = self.state.document.settings.env.config.revealjs_script_conf['audio']['prefix'] or ''
+            suffix = self.state.document.settings.env.config.revealjs_script_conf['audio']['suffix'] or ''
+            audio_file_name = path + self.options['data-audio-src'] + suffix
+            self.options['data-audio-src'] = audio_file_name
         node.attributes = self.options
         return [
             node,
