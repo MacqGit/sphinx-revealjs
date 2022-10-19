@@ -26,6 +26,12 @@ def raw_json(argument):
         return ""
     return argument
 
+def set_audio_path(self):
+    path = self.state.document.settings.env.config.revealjs_script_conf['audio']['prefix'] or ''
+    suffix = self.state.document.settings.env.config.revealjs_script_conf['audio']['suffix'] or ''
+    audio_file_name = path + self.options['data-audio-src'] + suffix
+    self.options['data-audio-src'] = audio_file_name
+
 
 REVEALJS_SECTION_ATTRIBUTES = {
     # Markup / Slide State
@@ -74,10 +80,7 @@ class RevealjsSection(Directive):  # noqa: D101
     def run(self):  # noqa: D102
         node = revealjs_section()
         if 'data-audio-src' in self.options:
-            path = self.state.document.settings.env.config.revealjs_script_conf['audio']['prefix'] or ''
-            suffix = self.state.document.settings.env.config.revealjs_script_conf['audio']['suffix'] or ''
-            audio_file_name = path + self.options['data-audio-src'] + suffix
-            self.options['data-audio-src'] = audio_file_name
+            set_audio_path(self)
         node.attributes = self.options
         return [
             node,
@@ -93,6 +96,8 @@ class RevealjsBreak(Directive):  # noqa: D101
 
     def run(self):  # noqa: D102
         node = revealjs_break()
+        if 'data-audio-src' in self.options:
+            set_audio_path(self)
         node.attributes = self.options
         return [
             node,
