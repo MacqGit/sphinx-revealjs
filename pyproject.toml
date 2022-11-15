@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "sphinx_revealjs"
-version = "2.1.1"
+version = "2.1.2"
 description = "Sphinx extension with theme to generate Reveal.js presentation"
 license = {text = "Apache-2.0"}
 authors = [{name = "Kazuya Takei", email = "myself@attakei.net"}]

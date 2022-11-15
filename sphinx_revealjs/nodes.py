@@ -19,7 +19,7 @@ class SectionTagRenderer(object):
         """
         pair = []
         for k, v in self.attributes.items():
-            if not k.startswith("data-"):
+            if not k.startswith("data-") and not (k=="class"):
                 continue
             if isinstance(v, FlagAttribute):
                 pair.append(k)
